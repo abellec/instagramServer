@@ -102,7 +102,7 @@ app.post('/signup', function(req,res){
 
     if(u === undefined)
     {
-        users.push({id: id++, username: u.username, password: u.password});
+        users.push({id: id++, username: req.body.username, password: req.body.password});
     }
     else
     {
