@@ -106,6 +106,7 @@ app.post('/signup', function(req,res){
     if(u === undefined)
     {
         users.push({id: id++, username: req.body.username, password: req.body.password});
+        console.log("fait");
     }
     else
     {
