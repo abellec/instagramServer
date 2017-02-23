@@ -96,7 +96,6 @@ app.post('/login', function(req,res){
 app.post('/signup', function(req,res){
     console.log("test");
     console.log(req.body);
-    console.log(user);
     var u = users.find(function(element){
          return (element.username === req.body.username) && (element.password === req.body.password);
     });
@@ -104,7 +103,6 @@ app.post('/signup', function(req,res){
     if(u === undefined)
     {
         users.push({id: nId++, username: req.body.username, password: req.body.password});
-        console.log(users);
     }
     else
     {
