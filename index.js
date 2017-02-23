@@ -96,6 +96,9 @@ app.post('/login', function(req,res){
 app.post('/signup', function(req,res){
     console.log("test");
     console.log(req.body);
+    for(var i=0; i<3;i++){
+        console.log(users[i]);
+    }
     var u = users.find(function(element){
          return (element.username === req.body.username) && (element.password === req.body.password);
     });
