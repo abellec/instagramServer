@@ -2,7 +2,7 @@ var express = require('express');
 var cors = require('cors');
 var bodyParser = require('body-parser');
 var app = express();
-var id = 0;
+var nId = 0;
 
 // You can store key-value pairs in express, here we store the port setting
 app.set('port', (process.env.PORT || 80));
@@ -96,17 +96,15 @@ app.post('/login', function(req,res){
 app.post('/signup', function(req,res){
     console.log("test");
     console.log(req.body);
-    for(var i=0; i<3;i++){
-        console.log(users[i]);
-    }
+    console.log(user);
     var u = users.find(function(element){
          return (element.username === req.body.username) && (element.password === req.body.password);
     });
 
     if(u === undefined)
     {
-        users.push({id: id++, username: req.body.username, password: req.body.password});
-        console.log("fait");
+        users.push({id: nId++, username: req.body.username, password: req.body.password});
+        console.log(users);
     }
     else
     {
