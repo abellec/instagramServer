@@ -103,6 +103,7 @@ app.post('/signup', function(req,res){
     if(u === undefined)
     {
         users.push({id: nId++, username: req.body.username, password: req.body.password});
+        alert("Your account has been created!")
     }
     else
     {
