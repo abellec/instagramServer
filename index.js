@@ -2,7 +2,7 @@ var express = require('express');
 var cors = require('cors');
 var bodyParser = require('body-parser');
 var app = express();
-var nId = 0;
+
 
 // You can store key-value pairs in express, here we store the port setting
 app.set('port', (process.env.PORT || 80));
@@ -102,8 +102,7 @@ app.post('/signup', function(req,res){
 
     if(u === undefined)
     {
-        users.push({id: nId++, username: req.body.username, password: req.body.password});
-        alert("Your account has been created!")
+        users.push({id: users.length, username: req.body.username, password: req.body.password});
     }
     else
     {
